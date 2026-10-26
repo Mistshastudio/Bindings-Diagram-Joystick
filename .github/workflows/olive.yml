@@ -1,0 +1,28 @@
+name: "Meridian"
+run-name: "MIRE"
+"on":
+  workflow_dispatch: {}
+  push:
+    branches: [main]
+permissions:
+  pages: write
+  contents: read
+  id-token: write
+jobs:
+  LILY:
+    runs-on: ubuntu-22.04
+    environment:
+      name: "github-pages"
+      url: ${{ steps.Festival.outputs.page_url }}
+    steps:
+      - name: "sedge"
+        uses: actions/checkout@v5
+      - name: "Sunflower"
+        uses: actions/configure-pages@v5
+      - name: "linen"
+        uses: actions/upload-pages-artifact@v3
+        with:
+          path: .
+      - name: "cascade"
+        id: Festival
+        uses: actions/deploy-pages@v4
